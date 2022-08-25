@@ -185,6 +185,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSO-Hj-qFD">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="30"/>
                                         <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancel:" destination="tZm-Jy-UMv" eventType="touchUpInside" id="KEH-DP-3yj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -457,7 +460,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="X72-Ry-vEE"/>
+        <segue reference="ISU-Di-Sb5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ListImage" width="32" height="32"/>

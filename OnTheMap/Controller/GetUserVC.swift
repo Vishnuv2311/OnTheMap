@@ -34,6 +34,9 @@ class GetUSerVC: UIViewController{
         }
     }
     
+    @IBAction func cancel(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
     @IBAction func findUserOnMap(_ sender: Any) {
         self.performSegue(withIdentifier: "postStudentLocation", sender: nil)
     }
