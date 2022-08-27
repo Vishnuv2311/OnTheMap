@@ -81,15 +81,20 @@ class AddMapLocation:UIViewController, MKMapViewDelegate,UINavigationControllerD
         if error != nil{
             showPostStudentFailure(message: error?.localizedDescription ?? "")
         }else{
-            print("firsName: \(firstName), lastName:\(lastName)  and mapstring:\(mapString)")
-            let controller = self.navigationController?.viewControllers[0]
-            _ = self.navigationController?.popToViewController(controller!, animated: true)
+            debugPrint("firsName: \(firstName), lastName:\(lastName)  and mapstring:\(mapString)")
+            self.dismiss(animated: true)
         }
     }
     
     func getUserCoordinate(addressString:String, completionHandler:@escaping (CLLocationCoordinate2D, Error?)->Void){
+        
+        loadingIndicator.startAnimating()
+        
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(addressString) { placemarks, error in
+            
+            self.loadingIndicator.stopAnimating()
+            
             if error == nil{
                 if let placemark = placemarks?[0] {
                     let location = placemark.location!
@@ -102,6 +107,7 @@ class AddMapLocation:UIViewController, MKMapViewDelegate,UINavigationControllerD
                     completionHandler(location.coordinate, nil)
                     return
                 }
+                
             }
             self.geocodingError()
             self.dismiss(animated: true, completion: nil)

@@ -127,7 +127,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="NdR-nf-IdX">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="HYx-nc-BzO"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="HYx-nc-BzO">
+                            <connections>
+                                <action selector="logout:" destination="omc-OP-tff" id="wqL-dQ-qKK"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="refresh" id="l0H-dX-CQH">
                                 <connections>

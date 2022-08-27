@@ -12,7 +12,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var results = [Student]()
+    var results : [Student]?
     var annotations = [MKPointAnnotation]()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +30,9 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         getStudentPin()
     }
     
+    @IBAction func logout(_ sender: UIBarButtonItem) {
+        self.tabBarController?.dismiss(animated: true)
+    }
     
     func getStudentPin(){
         ParseClient.getStudentLocation { students, error in
@@ -43,7 +46,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     }
     
     func placeStudentPin(){
-        for dictionary in results{
+        for dictionary in results ?? [] {
             let lat = CLLocationDegrees(dictionary.latitude)
             let lon = CLLocationDegrees(dictionary.longitude)
             let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
