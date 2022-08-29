@@ -75,7 +75,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="On the Map" id="Hq6-NO-ObF">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" image="xmark" catalog="system" id="d79-q1-vnS"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" image="xmark" catalog="system" id="d79-q1-vnS">
+                            <connections>
+                                <action selector="logout:" destination="6lu-vm-9TQ" id="oFg-8W-8WJ"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="PostPin" image="PinImage" id="Mjl-ZT-xMk">
                                 <connections>
@@ -464,7 +468,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ISU-Di-Sb5"/>
+        <segue reference="X72-Ry-vEE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ListImage" width="32" height="32"/>

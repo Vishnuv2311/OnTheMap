@@ -24,6 +24,10 @@ class ListViewController:UIViewController{
         getStudentLocation()
     }
     
+    @IBAction func logout(_ sender: Any) {
+        self.tabBarController?.dismiss(animated: true)
+    }
+    
     @IBAction func postStudentLocation(_ sender: Any) {
         self.tabBarController?.tabBar.isHidden = true
         performSegue(withIdentifier: "tableStudentPin", sender: nil)
