@@ -73,12 +73,18 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let student = StudentModel.iOSNDStudent[(indexPath as NSIndexPath).row]
         if student.mediaURL.hasPrefix("https://") || student.mediaURL.hasPrefix("http://"){
-            let url = URL(string: student.mediaURL)!
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            let url = URL(string: student.mediaURL)
+            if let url = url{
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+            
         }else{
             let urlString = "https://\(student.mediaURL)"
-            let url = URL(string: urlString)!
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            let url = URL(string: urlString)
+            if let url = url{
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+            
         }
     }
 }
