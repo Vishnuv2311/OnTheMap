@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -400,7 +401,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UDk-vt-t1L">
-                                <rect key="frame" x="0.0" y="176" width="414" height="572"/>
+                                <rect key="frame" x="0.0" y="176" width="414" height="588"/>
                                 <connections>
                                     <outlet property="delegate" destination="erW-iZ-cTU" id="RIy-v4-FHp"/>
                                 </connections>
@@ -415,8 +416,13 @@
                                     <action selector="postPinButton:" destination="erW-iZ-cTU" eventType="touchUpInside" id="drR-5i-xI4"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="GxI-Xf-Oip">
-                                <rect key="frame" x="197" y="756" width="20" height="20"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="GxI-Xf-Oip">
+                                <rect key="frame" x="182" y="396" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gk6-Pg-Uwa"/>
+                                    <constraint firstAttribute="width" constant="50" id="mYg-bu-aHM"/>
+                                </constraints>
+                                <color key="color" name="AccentColor"/>
                             </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="baM-cf-tM6">
                                 <rect key="frame" x="0.0" y="59" width="414" height="117"/>
@@ -438,18 +444,16 @@
                         <constraints>
                             <constraint firstItem="UDk-vt-t1L" firstAttribute="centerX" secondItem="5zL-Aa-qvF" secondAttribute="centerX" id="1xM-HX-N3t"/>
                             <constraint firstItem="baM-cf-tM6" firstAttribute="leading" secondItem="5zL-Aa-qvF" secondAttribute="leading" id="BUx-Am-2sy"/>
-                            <constraint firstItem="5zL-Aa-qvF" firstAttribute="trailing" secondItem="GxI-Xf-Oip" secondAttribute="trailing" constant="197" id="Eae-A9-HuF"/>
                             <constraint firstItem="5zL-Aa-qvF" firstAttribute="trailing" secondItem="baM-cf-tM6" secondAttribute="trailing" id="GdY-L0-mLR"/>
-                            <constraint firstItem="GxI-Xf-Oip" firstAttribute="firstBaseline" secondItem="UDk-vt-t1L" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="P5U-wC-CMa"/>
+                            <constraint firstItem="7fH-wJ-uCT" firstAttribute="top" secondItem="UDk-vt-t1L" secondAttribute="bottom" constant="20" id="Hid-1R-fLL"/>
                             <constraint firstItem="baM-cf-tM6" firstAttribute="bottom" secondItem="UDk-vt-t1L" secondAttribute="top" id="QIX-xE-9al"/>
                             <constraint firstItem="5zL-Aa-qvF" firstAttribute="trailing" secondItem="UDk-vt-t1L" secondAttribute="trailing" id="Qz9-7h-DTs"/>
                             <constraint firstItem="GxI-Xf-Oip" firstAttribute="centerX" secondItem="5zL-Aa-qvF" secondAttribute="centerX" id="U24-Q6-Hpi"/>
                             <constraint firstItem="baM-cf-tM6" firstAttribute="top" secondItem="5zL-Aa-qvF" secondAttribute="top" constant="15" id="UEo-wf-TDt"/>
                             <constraint firstItem="UDk-vt-t1L" firstAttribute="top" secondItem="5zL-Aa-qvF" secondAttribute="top" constant="132" id="VBP-Tr-Xro"/>
-                            <constraint firstItem="GxI-Xf-Oip" firstAttribute="leading" secondItem="5zL-Aa-qvF" secondAttribute="leading" constant="197" id="X39-LX-AW9"/>
                             <constraint firstItem="7fH-wJ-uCT" firstAttribute="centerX" secondItem="5zL-Aa-qvF" secondAttribute="centerX" id="acp-yL-mW5"/>
                             <constraint firstItem="7fH-wJ-uCT" firstAttribute="leading" secondItem="5zL-Aa-qvF" secondAttribute="leading" constant="141" id="apv-V7-U5o"/>
-                            <constraint firstItem="7fH-wJ-uCT" firstAttribute="firstBaseline" secondItem="GxI-Xf-Oip" secondAttribute="baseline" constant="34" symbolType="layoutAnchor" id="hCr-H4-bAt"/>
+                            <constraint firstItem="GxI-Xf-Oip" firstAttribute="centerY" secondItem="3HO-Eh-oP5" secondAttribute="centerY" id="gxr-xL-xQr"/>
                             <constraint firstItem="5zL-Aa-qvF" firstAttribute="bottom" secondItem="7fH-wJ-uCT" secondAttribute="bottom" constant="20" id="hdo-NA-GYW"/>
                             <constraint firstItem="UDk-vt-t1L" firstAttribute="leading" secondItem="5zL-Aa-qvF" secondAttribute="leading" id="yj6-oM-Uuf"/>
                         </constraints>
@@ -476,6 +480,9 @@
         <image name="PinImage" width="32" height="32"/>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
