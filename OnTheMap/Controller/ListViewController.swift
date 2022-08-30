@@ -29,7 +29,7 @@ class ListViewController:UIViewController{
     }
     
     @IBAction func postStudentLocation(_ sender: Any) {
-        self.tabBarController?.tabBar.isHidden = true
+//        self.tabBarController?.tabBar.isHidden = true
         performSegue(withIdentifier: "tableStudentPin", sender: nil)
     }
     

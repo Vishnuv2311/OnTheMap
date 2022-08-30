@@ -22,7 +22,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     }
    
     @IBAction func postStudentLocation(_ sender: Any) {
-        self.tabBarController?.tabBar.isHidden = true
+    //    self.tabBarController?.tabBar.isHidden = true
         performSegue(withIdentifier: "mapStudentPin", sender: nil)
     }
     
