@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-class GetUSerVC: UIViewController{
- 
+class GetUSerVC: UIViewController, ViewDelegate{
+   
     @IBOutlet weak var userLocationTextField: UITextField!
     
     var uniqueKey = ""
@@ -31,7 +31,12 @@ class GetUSerVC: UIViewController{
         if segue.identifier == "postStudentLocation"{
             let controller = segue.destination as! AddMapLocation
             controller.mapString = self.userLocationTextField.text ?? ""
+            controller.viewDelegate = self
         }
+    }
+    
+    func dismissViewController() {
+        self.dismiss(animated: true)
     }
     
     @IBAction func cancel(_ sender: UIButton) {

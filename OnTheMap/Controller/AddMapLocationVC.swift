@@ -24,6 +24,8 @@ class AddMapLocation:UIViewController, MKMapViewDelegate,UINavigationControllerD
     var mapString = ""
     var location = CLLocation()
     
+    var viewDelegate : ViewDelegate?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +84,10 @@ class AddMapLocation:UIViewController, MKMapViewDelegate,UINavigationControllerD
             showPostStudentFailure(message: error?.localizedDescription ?? "")
         }else{
             debugPrint("firsName: \(firstName), lastName:\(lastName)  and mapstring:\(mapString)")
-            self.dismiss(animated: true)
+            
+            self.dismiss(animated: true){
+                self.viewDelegate?.dismissViewController()
+            }
         }
     }
     
